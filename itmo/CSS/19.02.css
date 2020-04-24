@@ -1,0 +1,74 @@
+html,body{margin:0;
+    padding:0}
+body{font-family:'Roboto', sans-serif;
+    font-weight:100}
+.header{background: url('C:/РЕЗЕРВ/Уник/веб/Web/CSS/images/bg.jpg') no-repeat center center;
+    background-size:cover;
+    height:800px;
+    text-align:center;
+    position:relative;}
+.header .container{top:200px}
+.header h1{color: white;
+    font-size:120px;
+    line-height:100px;
+    margin-top:0;
+    margin-bottom:80px;
+    text-transform:uppercase}
+.header p{color: white;
+    font-weight:500;
+    letter-spacing:8px;
+    margin-bottom:40px;
+    margin-top:0;
+    text-transform:uppercase}
+.btn{color: white;
+    background:black;
+    padding:10px 40px;
+    text-decoration:none;
+    transition:background .3s}
+.nav{background:black;
+    height:80px;
+    width:100%}
+.nav ul{height:80px;
+    margin:0 auto;
+    padding:0;
+    text-align:center;
+    width:720px}
+.nav ul li{color: white;
+    display:inline-block;
+    height:80px;
+    line-height:80px;
+    width:140px;
+    transition:background .3s}
+.btn:hover,.nav ul li:hover{background:blue;
+    cursor:pointer;
+    transition:background .3s}
+.main .container{margin:80px auto}
+.container{margin-right:auto;
+    margin-left:auto;
+    padding-left:15px;
+    padding-right:15px;
+    text-align: center;
+    position:relative;}
+.cloud {
+    margin-left: 1%;
+    margin-top: 1%;
+    position: relative;
+    float:left;}
+.jumbotron{background:url('C:/РЕЗЕРВ/Уник/веб/Web/CSS/images/jumbotron_bg.jpg') no-repeat center center;
+    background-size:cover;
+    height:600px}
+.jumbotron .container{position:relative;
+    top:220px}
+.jumbotron h2{color: white;
+    text-align:right}
+.jumbotron p{color: white;
+    text-align:right}
+.jumbotron .btn{margin:10px 0 0;
+    float:right}
+.footer{background:black;
+    height:80px}
+.footer p{color: white;
+    font-size:14px;
+    height:80px;
+    line-height:80px;
+    margin:0}
