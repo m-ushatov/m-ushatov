@@ -117,8 +117,7 @@ let sumHeight = img1.height+img2.height+img3.height;
 document.write('Сумма всех высот картинок: ' + sumHeight +'px');
 document.write("<br/>");
 
-document.write(document.body.getElementsByTagName('a').item(0).innerText);
-
+//Задание №3
 let task3 = document.createElement("h1");
 task3.innerText = "Задание 3";
 document.body.append(task3);
