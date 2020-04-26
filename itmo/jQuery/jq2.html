@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <title>JQuery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  </head>
+
+
+<body>
+    <script>
+        $(document).ready(function(){
+   
+    //получите содержимое с помощью аджакса, обновив один из элементов страницы динамически. 
+
+    $("#F5").click(
+        function () {
+            $("#forajax").load("https://inxaoc.github.io/example/ajax-1.html", "", "");
+        }
+    )
+    })
+
+    </script>
+
+    <input type="button" value="Обновить страницу" id="F5"><br></br>
+    <p id="forajax">Элемент для применения Ajax</p>
+</body>
+</html>

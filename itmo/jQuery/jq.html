@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <title>JQuery</title>
+ 
+  <!--Подключение JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jq.css">
+</head>
+
+
+<body>
+    <h1>Работа c JQuery</h1>
+
+    <h2>Задание 1</h2>
+
+    <p>Текст без применения класса</p>
+    <p class="cl1">Текст c применением 1го класса</p>
+    <p class="cl2">Текст с применением 2го класса</p>
+    <p class="cl3">Текст с применением 3го класса</p>
+   
+    <a href="https://www.google.ru/">Сcылка без применения класса</a></br>
+    <a href="https://spb.hh.ru/" class="cl4">Сcылка с применением 4го класса</a></br>
+    <a href="http://yandex.ru"  class="cl5">Сcылка с применением 5го класса</a>
+</br>
+</br>
+    <!-- <input type="button" value="Отключение элементов формы" class="F5"></br> -->
+
+<script>
+    $(document).ready(function(){
+
+// изменить стили оформления ссылок и параграфов с определенным классом на собственный
+
+        // $("p").css("color", "teal");
+        $(".cl1").css("fontSize", "30px");
+        $(".cl1").css("color", "teal");
+        $(".cl2").css("fontSize", "40px");
+        $(".cl2").css("fontWeight", "bold");
+        $(".cl2").css("color", "lightblue");
+        $(".cl3").css("fontSize", "45px");
+        $(".cl3").css("color", "indigo");
+        $(".cl4").css("text-decoration", "none");
+        $(".cl4").css("fontSize", "30px");
+        $(".cl4").css("color", "green");
+        $(".cl5").css("font-family", "fantasy");
+        $(".cl5").css("fontSize", "30px");
+
+// написать функцию установки всех элементов формы в disabled и применить ее при загрузке страницы ко всем элементам формы
+
+    $(document).ready(function() { 
+        $("form *").prop("disabled",true);
+
+    });
+
+
+
+// Задание 2
+// п.1 Для всех ссылок перед текстом с помощью jQuery добавить emoji ↗ 
+
+        $("a").prepend("↗");
+    
+// п.2 Изменить атрибут так чтобы все все ссылки на странице открывались в новом окне
+
+        $("a").attr("target", "_blank");
+
+// Изменить все ссылки http на https с помощью jQuery
+
+$("a").each(function () {
+        $(this).attr("href", function (index, value) {
+            let protocol = value.substring(0, value.indexOf(':'));
+            if (protocol === 'http') {
+                let href = value.substring(value.indexOf(':'), value.length);
+                return protocol + 's' + href;
+            }
+        });
+    });
+
+//Добавить фиксированную кнопку (верхний правый угол) на странице по нажатию на которую п.1 и п.2 этого задания отменяются
+
+$('body').append('<button id = "undo">Отменить изменения</button>');
+    $("#undo").click(function () {
+
+        $("a").each(function () {
+            $(this).text(function (index, text) {
+                if (text.substr(0, 1) === '↗') {
+                    return text.substring(1, text.length);
+                }
+            });
+            $("a").attr("target", "_self");
+        });
+    });
+
+
+//Задание 3
+//При нажатии на кнопку производить анимацию/эффект с элементом той же строки в первой колонке
+
+    //fadeTO
+
+        $(".but2").click(
+            function () {
+                $(".fadeto").fadeTo(1000, 0.1, "linear");
+            }
+        )
+
+    //slideToggle
+
+        $(".but3").click(
+            function () {
+                $(".toggle").slideToggle(1000, "linear");
+            }
+        )
+    
+    //fadeOut
+
+        $(".but4").click(
+            function () {
+                $(".fadeout").fadeOut("slow", "swing");
+            }
+        )
+    
+    //fadeIn
+
+        $(".fadein").fadeOut("fast", "swing");
+        $(".but5").click(
+            function () {
+                $(".fadein").fadeIn("slow", "swing");
+            }
+        )
+    
+    //slideUp
+
+        $(".but6").click(
+            function () {
+                $(".slideup").slideUp("slow", "swing");
+            }
+        )
+      
+    })
+</script>
+
+<h3>Форма, элементы которой отключены:</h3>
+
+<form>
+    <input type="button" value="Нажмите"></input>
+    <input type="text" value="Введите текст"></input>
+</form>
+</br></br>
+<h2>Задание 3</h2>
+
+<!--Создайте таблицу с колонками «текст» и «эффект/анимация»-->
+
+<table id='dataTable' border="1">
+    <tr>
+        <td><b>Текст</b></td>
+        <td><b>Эффект/анимация</b></td>
+    </tr>
+    <tr>
+        <td class="fadeto">Постепенно скрывает элемент до указанного уровня прозрачности</td>
+        <td><input type="button" value="Применить fadeTo" class="but2"></td>
+    </tr>
+    <tr>
+        <td class="toggle">Постепенное изменение высоты элементов</td>
+        <td><input type="button" value="Применить slideToggle" class="but3"></td>
+    </tr>
+    <tr>
+        <td class="fadeout">Элемент постепенно скрывается с указанной скоростью</td>
+        <td><input type="button" value="Применить fadeOut" class="but4"></td>
+    </tr>
+    <tr>
+        <td class="fadein">Элемент постепенно появляется с указанной скоростью</td>
+        <td><input type="button" value="Применить fadeIn" class="but5"></td>
+    </tr>
+    <tr>
+        <td class="slideup">Высота элемента изменится до 0</td>
+        <td><input type="button" value="Применить slideUp" class="but6"></td>
+    </tr>
+</table>
+
+<h2>Задание 4</h2>
+
+<a href="jq2.html">Сcылка для перехода на 4 задание</a></br>
+</br></br></br>
+
+
+</body>
+</html>
