@@ -1,0 +1,23 @@
+#undo {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+table {
+    border: 1px solid #000;
+}
+table thead th {
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+table thead th, table tbody td {
+    padding: 10px;
+    font-size: 12pt;
+    font-family: Verdana, Tahoma;
+}
+table tbody td {
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
